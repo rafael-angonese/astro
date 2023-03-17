@@ -2,6 +2,8 @@
 import Button from "../components/Button.astro";
 import Wrapper from "../components/Wrapper.astro";
 
+import MySiteLayout from "../layouts/MySiteLayout.astro";
+
 const title = "Jubileu";
 
 const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
@@ -16,29 +18,31 @@ const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
-    <h1>Astro</h1>
-    <h1>Astro</h1>
-    <h1>Astro</h1>
+    <MySiteLayout>
+      <h1>Astro</h1>
+      <h1>Astro</h1>
+      <h1>Astro</h1>
+      <h1>Astro</h1>
 
-    <Button title="Button 1" />
-    <Button title="Button 2" />
-    <Button title="Button 3" />
+      <Button title="Button 1" />
+      <Button title="Button 2" />
+      <Button title="Button 3" />
 
-    <p>{title}</p>
+      <p>{title}</p>
 
-    <ul>
-      {myFavoritePokemon.map((data) => <li>{data}</li>)}
-    </ul>
+      <ul>
+        {myFavoritePokemon.map((data) => <li>{data}</li>)}
+      </ul>
 
-    <p>I hope you have a wonderful day!</p>
+      <p>I hope you have a wonderful day!</p>
 
-    <Wrapper>
-      <div>Lalala no slot</div>
+      <Wrapper>
+        <div>Lalala no slot</div>
 
-      <div slot="jubileu">Copyright 2022</div>
-    </Wrapper>
+        <div slot="jubileu">Copyright 2022</div>
+      </Wrapper>
 
-    <!-- <ReactPokemonComponent client:visible /> -->
+      <!-- <ReactPokemonComponent client:visible /> -->
+    </MySiteLayout>
   </body>
 </html>
