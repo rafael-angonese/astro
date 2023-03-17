@@ -1,15 +1,44 @@
 ---
+import Button from "../components/Button.astro";
+import Wrapper from "../components/Wrapper.astro";
+
+const title = "Jubileu";
+
+const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <h1>Astro</h1>
+    <h1>Astro</h1>
+    <h1>Astro</h1>
+
+    <Button title="Button 1" />
+    <Button title="Button 2" />
+    <Button title="Button 3" />
+
+    <p>{title}</p>
+
+    <ul>
+      {myFavoritePokemon.map((data) => <li>{data}</li>)}
+    </ul>
+
+    <p>I hope you have a wonderful day!</p>
+
+    <Wrapper>
+      <div>Lalala no slot</div>
+
+      <div slot="jubileu">Copyright 2022</div>
+    </Wrapper>
+
+    <!-- <ReactPokemonComponent client:visible /> -->
+  </body>
 </html>
