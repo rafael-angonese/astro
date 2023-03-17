@@ -3,6 +3,8 @@ import Button from "../components/Button.astro";
 import Wrapper from "../components/Wrapper.astro";
 
 import MySiteLayout from "../layouts/MySiteLayout.astro";
+import MyReactComponent from "../components/MyReactComponent.jsx";
+import Sidebar from "../components/Sidebar.tsx";
 
 const title = "Jubileu";
 
@@ -43,6 +45,19 @@ const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
       </Wrapper>
 
       <!-- <ReactPokemonComponent client:visible /> -->
+
+      <MyReactComponent />
+      <MyReactComponent client:visible />
+      <MyReactComponent client:load />
+
+      <Sidebar>
+        <h2 slot="title">Menu</h2>
+        <p>Here is a sidebar with some text and a button.</p>
+        <ul slot="social-links">
+          <li><a href="https://twitter.com/astrodotbuild">Twitter</a></li>
+          <li><a href="https://github.com/withastro">GitHub</a></li>
+        </ul>
+      </Sidebar>
     </MySiteLayout>
   </body>
 </html>
