@@ -1,15 +1,11 @@
 interface ISidebarProps {
-  title: React.ReactNode;
   children: React.ReactNode;
-  socialLinks: React.ReactNode;
 }
 
-const Sidebar: React.FC<ISidebarProps> = (props) => {
+const Sidebar: React.FC<ISidebarProps> = ({ children }) => {
   return (
     <aside>
-      <header>{props.title}</header>
-      <main>{props.children}</main>
-      <footer>{props.socialLinks}</footer>
+      <main>{children}</main>
     </aside>
   );
 };

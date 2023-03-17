@@ -4,7 +4,7 @@ import Wrapper from "../components/Wrapper.astro";
 
 import MySiteLayout from "../layouts/MySiteLayout.astro";
 import MyReactComponent from "../components/MyReactComponent.jsx";
-import Sidebar from "../components/Sidebar.tsx";
+import Sidebar from "../components/Sidebar.jsx";
 
 const title = "Jubileu";
 
@@ -25,6 +25,10 @@ const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
       <h1>Astro</h1>
       <h1>Astro</h1>
       <h1>Astro</h1>
+
+
+	  <p>Read more <a href="/posts/1">about</a> Astro!</p>
+
 
       <Button title="Button 1" />
       <Button title="Button 2" />
@@ -51,9 +55,9 @@ const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
       <MyReactComponent client:load />
 
       <Sidebar>
-        <h2 slot="title">Menu</h2>
+        <h2>Menu</h2>
         <p>Here is a sidebar with some text and a button.</p>
-        <ul slot="social-links">
+        <ul>
           <li><a href="https://twitter.com/astrodotbuild">Twitter</a></li>
           <li><a href="https://github.com/withastro">GitHub</a></li>
         </ul>
