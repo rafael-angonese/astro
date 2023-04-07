@@ -1,0 +1,46 @@
+---
+import Button from "../components/Button.astro";
+import Wrapper from "../components/Wrapper.astro";
+
+import MyReactComponent from "../components/MyReactComponent.jsx";
+import Sidebar from "../components/Sidebar.jsx";
+
+const title = "Jubileu";
+
+const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
+---
+
+<div class="flex justify-center text-center items-center h-screen">
+  <div>
+    <p>Read more <a href="/posts/1">about</a> Astro!</p>
+
+    <Button title="Button 1" />
+    <Button title="Button 2" />
+    <Button title="Button 3" />
+
+    <p>{title}</p>
+
+    <ul>
+      {myFavoritePokemon.map((data) => <li>{data}</li>)}
+    </ul>
+
+    <Wrapper>
+      <div>Lalala no slot</div>
+
+      <div slot="jubileu">Copyright 2022</div>
+    </Wrapper>
+
+    <MyReactComponent />
+    <MyReactComponent client:visible />
+    <MyReactComponent client:load />
+
+    <Sidebar>
+      <h2>Menu</h2>
+      <p>Here is a sidebar with some text and a button.</p>
+      <ul>
+        <li><a href="https://twitter.com/astrodotbuild">Twitter</a></li>
+        <li><a href="https://github.com/withastro">GitHub</a></li>
+      </ul>
+    </Sidebar>
+  </div>
+</div>

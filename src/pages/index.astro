@@ -1,67 +1,15 @@
 ---
-import Button from "../components/Button.astro";
-import Wrapper from "../components/Wrapper.astro";
+import Layout from "../layouts/Layout.astro";
 
-import MySiteLayout from "../layouts/MySiteLayout.astro";
-import MyReactComponent from "../components/MyReactComponent.jsx";
-import Sidebar from "../components/Sidebar.jsx";
-
-const title = "Jubileu";
-
-const myFavoritePokemon: string[] = ["Pikachu", "Gengar", "Ditto"];
+import AboutMe from "../components/AboutMe/AboutMe";
+import Hero from "../components/Hero.svelte";
+import Toolbox from "../components/Toolbox.svelte";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <MySiteLayout>
-      <h1>Astro</h1>
-      <h1>Astro</h1>
-      <h1>Astro</h1>
-      <h1>Astro</h1>
+<Layout title="Astro - Rafael Angonese" description="Web Developer">
+  <Hero />
 
+  <AboutMe />
 
-	  <p>Read more <a href="/posts/1">about</a> Astro!</p>
-
-
-      <Button title="Button 1" />
-      <Button title="Button 2" />
-      <Button title="Button 3" />
-
-      <p>{title}</p>
-
-      <ul>
-        {myFavoritePokemon.map((data) => <li>{data}</li>)}
-      </ul>
-
-      <p>I hope you have a wonderful day!</p>
-
-      <Wrapper>
-        <div>Lalala no slot</div>
-
-        <div slot="jubileu">Copyright 2022</div>
-      </Wrapper>
-
-      <!-- <ReactPokemonComponent client:visible /> -->
-
-      <MyReactComponent />
-      <MyReactComponent client:visible />
-      <MyReactComponent client:load />
-
-      <Sidebar>
-        <h2>Menu</h2>
-        <p>Here is a sidebar with some text and a button.</p>
-        <ul>
-          <li><a href="https://twitter.com/astrodotbuild">Twitter</a></li>
-          <li><a href="https://github.com/withastro">GitHub</a></li>
-        </ul>
-      </Sidebar>
-    </MySiteLayout>
-  </body>
-</html>
+  <Toolbox client:idle />
+</Layout>
